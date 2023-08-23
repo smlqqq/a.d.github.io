@@ -1,0 +1,673 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #222;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    /*color: white;*/
+
+}
+
+body {
+    background-color: #111111;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+/*GLITCH-------------------*/
+/*body {*/
+/*    padding: 0;*/
+/*    margin: 0;*/
+/*    height: 100vh;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    background-color: #000;*/
+/*}*/
+
+.glitch {
+    position: relative;
+    overflow: hidden;
+}
+
+.glitch img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 300px;
+    box-shadow: 0 0 10px rgb(11, 12, 17); /* Параметры тени */
+    margin: 5px;
+}
+
+.glitch__layers {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.glitch__layer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.glitch__layer:nth-child(1) {
+    transform: translateX(-5%);
+    animation: glitch-anim-1 2s infinite linear alternate;
+}
+
+.glitch__layer:nth-child(2) {
+    transform: translateX(3%) translateY(3%);
+    animation: glitch-anim-2 2.3s -.8s infinite linear alternate;
+}
+
+.glitch__layer:nth-child(3) {
+    transform: translateX(5%);
+    animation: glitch-anim-flash 1s infinite linear;
+}
+
+@keyframes glitch-anim-1 {
+    0% {
+        clip-path: polygon(0 0%, 100% 0%, 100% 5%, 0 5%);
+    }
+    10% {
+        clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+    }
+    20% {
+        clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+    }
+    30% {
+        clip-path: polygon(0 1%, 100% 1%, 100% 2%, 0 2%);
+    }
+    40% {
+        clip-path: polygon(0 35%, 100% 35%, 100% 35%, 0 35%);
+    }
+    50% {
+        clip-path: polygon(0 45%, 100% 45%, 100% 46%, 0 46%);
+    }
+    60% {
+        clip-path: polygon(0 50%, 100% 50%, 100% 70%, 0 70%);
+    }
+    70% {
+        clip-path: polygon(0 70%, 100% 70%, 100% 70%, 0 70%);
+    }
+    80% {
+        clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+    }
+    90% {
+        clip-path: polygon(0 50%, 100% 50%, 100% 55%, 0 55%);
+    }
+    100% {
+        clip-path: polygon(0 60%, 100% 60%, 100% 70%, 0 70%);
+    }
+}
+
+@keyframes glitch-anim-2 {
+    0% {
+        clip-path: polygon(0 15%, 100% 15%, 100% 30%, 0 30%);
+    }
+    15% {
+        clip-path: polygon(0 3%, 100% 3%, 100% 3%, 0 3%);
+    }
+    25% {
+        clip-path: polygon(0 8%, 100% 8%, 100% 20%, 0 20%);
+    }
+    30% {
+        clip-path: polygon(0 20%, 100% 20%, 100% 20%, 0 20%);
+    }
+    45% {
+        clip-path: polygon(0 45%, 100% 45%, 100% 45%, 0 45%);
+    }
+    50% {
+        clip-path: polygon(0 50%, 100% 50%, 100% 57%, 0 57%);
+    }
+    65% {
+        clip-path: polygon(0 60%, 100% 60%, 100% 60%, 0 60%);
+    }
+    75% {
+        clip-path: polygon(0 80%, 100% 80%, 100% 80%, 0 80%);
+    }
+    80% {
+        clip-path: polygon(0 40%, 100% 40%, 100% 60%, 0 60%);
+    }
+    95% {
+        clip-path: polygon(0 45%, 100% 45%, 100% 60%, 0 60%);
+    }
+    100% {
+        clip-path: polygon(0 11%, 100% 11%, 100% 15%, 0 15%);
+    }
+}
+
+@keyframes glitch-anim-flash {
+    0% {
+        opacity: .2;
+    }
+    30%, 100% {
+        opacity: 0;
+    }
+}
+
+
+/*GLITCH-------------------*/
+
+.bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+    /*background: transparent url('assets/BG/noise-transparent.png');*/
+    animation: bg-animation .2s infinite;
+    opacity: .9;
+    visibility: visible;
+}
+
+@keyframes bg-animation {
+    0% {
+        transform: translate(0, 0)
+    }
+    10% {
+        transform: translate(-5%, -5%)
+    }
+    20% {
+        transform: translate(-10%, 5%)
+    }
+    30% {
+        transform: translate(5%, -10%)
+    }
+    40% {
+        transform: translate(-5%, 15%)
+    }
+    50% {
+        transform: translate(-10%, 5%)
+    }
+    60% {
+        transform: translate(15%, 0)
+    }
+    70% {
+        transform: translate(0, 10%)
+    }
+    80% {
+        transform: translate(-15%, 0)
+    }
+    90% {
+        transform: translate(10%, 5%)
+    }
+    100% {
+        transform: translate(5%, 0)
+    }
+}
+
+.social {
+    width: 100%;
+    height: 38vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    margin-top: 0;
+    padding-top: 20px;
+    /*filter: drop-shadow(3px 3px 10px rgba(245, 167, 167, 0.4));*/
+
+}
+
+.social__icon {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    /*background-color: #faebd7;*/
+    /*border-radius: 50%;*/
+    box-shadow: 0 0 5px #00000080;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid white;
+
+}
+
+.social__icon i {
+    font-size: 26px;
+    /*color: #67798e;*/
+    color: #afadad;
+    transition: all 0.3s ease;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.social__icon:after {
+    content: "";
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    transform: translate(0, 70px);
+    /*border-radius: 50%;*/
+    transition: all 0.3s ease;
+    overflow: hidden;
+
+}
+
+.social__icon.email:after {
+    background-color: #c72929;
+}
+
+.social__icon.git:after {
+    background-color: #333;
+}
+
+.social__icon.linkedin:after {
+    background-color: #0e76a8;
+}
+
+.social__icon.telegram:after {
+    background-color: #0288bd;
+}
+
+.social__icon.cv:after {
+    font-family: 'PixelFont', sans-serif;
+    color: black;
+    background-color: rgb(91, 84, 175);
+}
+
+.social__icon:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 15px #00000080;
+}
+
+.social__icon:hover i {
+    color: #fff;
+
+}
+
+.social__icon:hover:after {
+    transform: translate(0);
+}
+
+.ghost-button-transition {
+    display: none;
+    /*display: inline-block;*/
+    width: 130px;
+    height: 16px;
+    padding: 8px;
+    color: #c5c5c5;
+    border: 2px solid #858585;
+    /*border-radius: 20px;*/
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    /*transition: background-color 0.2s ease-out, color 0.2s ease-out;*/
+    transition: all 0.3s ease;
+    font-family: 'PixelFont', sans-serif;
+    font-size: 14px;
+    /*filter: drop-shadow(3px 3px 10px rgba(245, 167, 167, 0.4));*/
+}
+
+
+.button {
+    float: right;
+    display: flex;
+    padding: 60px 100px;
+    justify-content: flex-end;
+    font-family: 'PixelFont', sans-serif;
+    font-weight: bold;
+}
+
+
+.ghost-button-transition:hover,
+.ghost-button-transition:active {
+    font-family: 'PixelFont', sans-serif;
+    /*font-weight: bold;*/
+    background-color: #364394;
+    /*background-color: rgba(255, 255, 255, 1);*/
+    color: white;
+    transition: background-color 0.3s ease-in, color 0.3s ease-in;
+    transform: translateY(-4px);
+}
+
+
+/*@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');*/
+/**{*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    box-sizing: border-box;*/
+/*    font-family: 'Poppins', sans-serif;*/
+/*}*/
+/*html,body{*/
+/*    display: grid;*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    place-items: center;*/
+/*    background: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);*/
+/*}*/
+/*.wrapper .button{*/
+/*    display: inline-block;*/
+/*    height: 60px;*/
+/*    width: 60px;*/
+/*    float: left;*/
+/*    margin: 0 5px;*/
+/*    overflow: hidden;*/
+/*    background: #fff;*/
+/*    border-radius: 50px;*/
+/*    cursor: pointer;*/
+/*    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);*/
+/*    transition: all 0.3s ease-out;*/
+/*}*/
+/*.wrapper .button:hover{*/
+/*    width: 200px;*/
+/*}*/
+/*.wrapper .button .icon{*/
+/*    display: inline-block;*/
+/*    height: 60px;*/
+/*    width: 60px;*/
+/*    text-align: center;*/
+/*    border-radius: 50px;*/
+/*    box-sizing: border-box;*/
+/*    line-height: 60px;*/
+/*    transition: all 0.3s ease-out;*/
+/*}*/
+/*.wrapper .button:nth-child(1):hover .icon{*/
+/*    background: #4267B2;*/
+/*}*/
+/*.wrapper .button:nth-child(2):hover .icon{*/
+/*    background: #1DA1F2;*/
+/*}*/
+/*.wrapper .button:nth-child(3):hover .icon{*/
+/*    background: #E1306C;*/
+/*}*/
+/*.wrapper .button:nth-child(4):hover .icon{*/
+/*    background: #333;*/
+/*}*/
+/*.wrapper .button:nth-child(5):hover .icon{*/
+/*    background: #ff0000;*/
+/*}*/
+/*.wrapper .button .icon i{*/
+/*    font-size: 25px;*/
+/*    line-height: 60px;*/
+/*    transition: all 0.3s ease-out;*/
+/*}*/
+/*.wrapper .button:hover .icon i{*/
+/*    color: #fff;*/
+/*}*/
+/*.wrapper .button span{*/
+/*    font-size: 20px;*/
+/*    font-weight: 500;*/
+/*    line-height: 60px;*/
+/*    margin-left: 10px;*/
+/*    transition: all 0.3s ease-out;*/
+/*}*/
+/*.wrapper .button:nth-child(1) span{*/
+/*    color: #4267B2;*/
+/*}*/
+/*.wrapper .button:nth-child(2) span{*/
+/*    color: #1DA1F2;*/
+/*}*/
+/*.wrapper .button:nth-child(3) span{*/
+/*    color: #E1306C;*/
+/*}*/
+/*.wrapper .button:nth-child(4) span{*/
+/*    color: #333;*/
+/*}*/
+/*.wrapper .button:nth-child(5) span{*/
+/*    color: #ff0000;*/
+/*}*/
+
+
+.wrap {
+    position: relative;
+    width: 200px;
+    height: 160px;
+}
+
+.header {
+    margin: 40px 0;
+}
+
+.wrapper {
+    position: fixed;
+    z-index: 2;
+}
+
+.header__avatar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+
+h1 {
+    font-family: 'PixelFont', sans-serif;
+    /*font-family: 'Ubuntu', sans-serif;*/
+    font-size: 75px;
+    text-align: center;
+    color: antiquewhite;
+    position: relative;
+    text-shadow: 0 0 10px rgb(11, 12, 17);
+    z-index: 2;
+
+}
+
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 75px;
+    text-align: center;
+    color: antiquewhite;
+    position: relative;
+    text-shadow: 0 0 10px rgb(11, 12, 17);
+    z-index: 2;
+}
+
+h3 {
+    font-family: 'PixelFont', sans-serif;
+    font-size: 30px;
+    vertical-align: 20px;
+    text-align: center;
+    color: antiquewhite;
+    position: relative;
+    text-shadow: 0 0 10px rgb(11, 12, 17);
+    z-index: 2;
+    margin-top: -200px;
+}
+
+h4 {
+    font-family: 'PixelFont', inherit, serif;
+    font-size: 30px;
+    line-height: 1.2;
+    text-align: center;
+    color: antiquewhite;
+    position: relative;
+    text-shadow: 0 0 10px rgb(11, 12, 17);
+    z-index: 2;
+    margin-top: -200px;
+}
+
+h5 {
+    /*font-family: 'Heebo', sans-serif;*/
+    /*font-family: 'Montserrat', sans-serif;*/
+    /*font-family: 'Roboto', sans-serif;*/
+    /*font-family: 'Manrope', sans-serif;*/
+    font-family: 'PixelFont', inherit, serif;
+    font-size: 24px;
+    vertical-align: 20px;
+    text-align: center;
+    line-height: 35px;
+    color: antiquewhite;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 0 10px rgb(11, 12, 17), 2px 2px 1px black;
+
+}
+
+
+h6 {
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    vertical-align: 20px;
+    margin: 5px;
+    text-align: left;
+    line-height: 35px;
+    color: #ffb04e;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 0 10px rgb(11, 12, 17);
+}
+
+.yellow_text {
+    /*display: none;*/
+    color: #ffb04e;
+}
+
+span {
+    /*display: none;*/
+    color: #fff9f2;
+}
+
+p {
+    font-family: 'PixelFont', sans-serif;
+    font-size: 16px;
+    margin: 10px;
+    vertical-align: baseline;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+}
+
+
+/*.secondBG {*/
+/*    left: 0;*/
+
+/*    width: 600px;*/
+/*    height: 400px;*/
+
+/*    box-shadow: 0 0 10px rgb(11, 12, 17); !* Параметры тени *!*/
+/*    padding: 10px;*/
+/*    !*border: 6px solid #be8a8a;*!*/
+/*    !*border-radius: 25px;*!*/
+/*    background-color: #33337e;*/
+/*    background-repeat: no-repeat;*/
+/*    background-size: 30px;*/
+/*}*/
+
+
+.BG {
+
+
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-color: rgba(22, 24, 40, 0.4);
+    background-size: cover;
+    /*background: url("assets/IMAGES/BG2.jpg") no-repeat center;*/
+
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: #181818;
+    /*background-image: url('assets/IMAGES/BG2.jpg');*/
+    box-shadow: 0 0 10px rgb(11, 12, 17);
+/ padding: 100 px;
+}
+
+.BG img {
+    width: 100%;
+}
+
+/*.innerBG{*/
+/*    width: 70vw;*/
+/*    height: 70vh;*/
+/*    !*overflow: hidden;*!*/
+/*    !*position: fixed;*!*/
+
+/*    background-repeat: no-repeat;*/
+/*    background-attachment: fixed;*/
+/*    background-position: center;*/
+/*    background-size: contain;*/
+/*    background-color: rgb(52, 52, 65);*/
+
+/*    box-shadow: 0 0 10px rgb(11, 12, 17); !* Параметры тени *!*/
+/*    padding: 10px;*/
+/*}*/
+
+.split {
+    height: 100%;
+    width: 65%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+
+
+}
+
+.left {
+    left: 0;
+    bottom: 0;
+
+}
+
+.right {
+    right: 0;
+    bottom: 0;
+
+}
+
+.centered {
+    font-family: 'PixelFont', serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+.lefted {
+    margin: auto 5px;
+    float: left;
+    height: 480px;
+    display: flow;
+}
+
+
+@font-face {
+    font-family: 'PixelFont';
+    src: url('/assets/FONTS/better-vcr_0.ttf') format('truetype');
+    /* Мы удалили 'local("PixelFont")' и изменяем 'format' на 'truetype' */
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+
+
