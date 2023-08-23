@@ -619,6 +619,7 @@ p {
 /*}*/
 
 .split {
+
     height: 100%;
     width: 65%;
     position: fixed;
@@ -657,6 +658,7 @@ p {
     float: left;
     height: 480px;
     display: flow;
+    overflow: auto;
 }
 
 
